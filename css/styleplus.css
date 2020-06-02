@@ -1,0 +1,125 @@
+#next_prev a {
+text-decoration: none;
+display: inline-block;
+padding: 8px 16px;
+}
+
+#next_prev a:hover {
+background-color: #ddd;
+color: black;
+}
+
+#next_prev .previous {
+background-color: #f1f1f1;
+color: black;
+}
+
+#next_prev .next {
+background-color: #4CAF50;
+color: white;
+float: right;
+}
+
+body {
+  font-family: "Comic sans MS";
+  font-size: 15px;
+}
+ul#books{
+  counter-reset: li; /* Initialise le compteur */
+  list-style: none; /* Supprime la numérotation par défaut */
+  *list-style: decimal; /* Restitue la numérotation par défaut pour IE6/7 */
+  font: 15px 'trebuchet MS', 'lucida sans';
+  padding: 0 10px;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+#books a{
+  position: relative;
+  display: block;
+  padding: .4em .4em .4em 2em;
+  *padding: .4em;
+  margin: .5em 0;
+  background: #ddd;
+  color: #444;
+  text-decoration: none;
+  border-radius: .3em;
+  transition: all .3s ease-out;
+}
+#books a:hover{
+  background: #eee;
+}
+#books a:hover:before{
+  transform: rotate(360deg);
+}
+#books a:before{
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  left: -1.3em;
+  top: 50%;
+  margin-top: -1.3em;
+  background: #87ceeb;
+  height: 2em;
+  width: 2em;
+  line-height: 2em;
+  border: .3em solid #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 2em;
+  transition: all .3s ease-out;
+}
+ul#categories {
+  counter-reset: li; /* Initialise le compteur */
+  list-style: none; /* Supprime la numérotation par défaut */
+  *list-style: decimal; /* Restitue la numérotation par défaut pour IE6/7 */
+  font: 15px 'trebuchet MS', 'lucida sans';
+  padding: 0 10px;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+.rounded:hover {
+  border-radius: 50%;
+}
+
+#categories li{
+  position: relative;
+  display: block;
+  padding: .4em .4em .4em .8em;
+  *padding: .4em;
+  margin: .5em 0 .5em 2.5em;
+  background: #ddd;
+  color: #444;
+  text-decoration: none;
+  transition: all .3s ease-out;
+  }
+  #categories li:hover{
+    background: #eee;
+  }
+  #categories li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+  }
+  #categories li:after{
+    position: absolute;
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;
+  }
+  #categories li:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;
+  }
+.active, .btn:hover {
+  background-color: #666;
+}
